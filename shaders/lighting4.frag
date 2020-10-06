@@ -26,10 +26,10 @@ in vec3 v;
 void main()
 {
     vec3 vertex_Eye = vertex_f;
-    vec3 N = n;
-    vec3 L = l;
+    vec3 N = normalize(n);
+    vec3 L = normalize(l);
     vec3 R = normalize((2*dot(n,l)*n) - l);
-    vec3 V = v;
+    vec3 V = normalize(v);
     float s = matShininess;
     vec4 Ka = matAmbient;
     vec4 Kd = matDiffuse;
