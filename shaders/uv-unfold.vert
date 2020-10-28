@@ -11,9 +11,13 @@ out vec2 vtexCoord;
 uniform mat4 modelViewProjectionMatrix;
 uniform mat3 normalMatrix;
 
+uniform vec2 Min=vec2(-1,-1);
+uniform vec2 Max=vec2(1,1);
+
 void main()
 {
+    vec3 N = normalize(normalMatrix * normal);
+    frontColor = vec4(color,1.0);
     vtexCoord = texCoord;
-    gl_Position = modelViewProjectionMatrix * vec4(vertex, 1.0);
+    gl_Position = vec4(texCoord.x,texCoord.y,0, 1.0);
 }
-

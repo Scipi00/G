@@ -13,7 +13,7 @@ uniform mat3 normalMatrix;
 
 void main()
 {
+    frontColor = vec4(normalize(normalMatrix * normal).z);
     vtexCoord = texCoord;
     gl_Position = modelViewProjectionMatrix * vec4(vertex, 1.0);
 }
-
